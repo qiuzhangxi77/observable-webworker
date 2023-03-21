@@ -1,0 +1,31 @@
+{
+  "name": "observable-webworker",
+  "version": "0.0.1",
+  "license": "MIT",
+  "peerDependencies": {
+    "rxjs": ">=6.4.0"
+  },
+  "keywords": [
+    "Rx",
+    "RxJS",
+    "ReactiveX",
+    "ReactiveExtensions",
+    "Streams",
+    "Observables",
+    "Observable",
+    "Stream",
+    "ES6",
+    "ES2015",
+    "Worker",
+    "Webworker",
+    "Webpack",
+    "Multithread"
+  ],
+  "dependencies": {
+    "tslib": "^2.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cloudnc/observable-webworker.git"
+  }
+}

@@ -1,0 +1,23 @@
+<h2>Single Worker Multiple Tasks</h2>
+<h3 *ngIf="status$ | async as status">({{ status }})</h3>
+
+<p>Select multiple files of varying sizes to compute MD5 sum of, in pool of webworkers:</p>
+
+<input type="file" multiple (change)="calculateMD5Multiple($event)" />
+<section>
+  <small>(No files are uploaded; they're kept entirely within your browser)</small>
+  <p>
+    ℹ️ large files (>10MB) gives the best results otherwise the timing starts to be dominated by the UI updates rather
+    than the computation of hashes
+  </p>
+</section>
+
+<h3 [attr.data]="chartObserver$ | async">Timeline</h3>
+<div #timeline></div>
+
+<h3>Events:</h3>
+<ol [attr.data]="workResult$ | async">
+  <li *ngFor="let event of eventListPool$ | async">
+    <app-log-line *ngIf="filenames$ | async as filenames" [message]="event" [files]="filenames"></app-log-line>
+  </li>
+</ol>
